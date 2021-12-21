@@ -1,0 +1,98 @@
+table {
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: var(--color-text-contrast);
+  margin-bottom: calc(var(--unit) * 2);
+  width: 100%;
+}
+
+table thead tr {
+  background-color: var(--color-base);
+  color: var(--color-text);
+}
+
+table thead tr:first-child th:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+
+table thead tr:last-child th:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+
+table th,
+table td {
+  padding: calc(var(--unit) / 1.5) var(--unit);
+  text-align: center;
+}
+
+table th:first-child,
+table td:first-child {
+  text-align: left;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr.platform {
+  background-color: #eee !important;
+  font-size: 0.8rem;
+}
+
+table tbody tr.platform td {
+  padding: calc(var(--unit) / 2) var(--unit) calc(var(--unit) / 2.5) var(--unit);
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: #fcfcfc;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 0;
+}
+
+table tbody tr:hover:not(.platform) {
+  background-color: #f4f4f4;
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius);
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius);
+}
+
+table input {
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  border: 0;
+  background-color: transparent;
+  font-weight: bold;
+  flex: 1;
+}
+
+table input::placeholder {
+  color: var(--color-text-light);
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+table tbody a {
+  color: var(--color-text-light);
+  font-weight: bold;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+table tbody a:hover {
+  color: var(--color-primary);
+}
+
+table tbody a + small {
+  color: var(--color-text-light);
+}
