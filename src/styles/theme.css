@@ -1,0 +1,62 @@
+@import 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap';
+
+@font-face {
+  font-family: Content;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300;
+  src: url(../assets/fonts/Circular-SP-Book.woff2) format('woff2'),
+    url(../assets/fonts/Circular-SP-Book.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: Content;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  src: url(../assets/fonts/Circular-SP-Bold.woff2) format('woff2'),
+    url(../assets/fonts/Circular-SP-Bold.ttf) format('ttf');
+}
+
+:root {
+  /* -- layout */
+  --border-radius: 0.4rem;
+  --offset: 4vw;
+  --unit: 1rem;
+  --margin-S: 0.5rem;
+  --margin-M: 1rem;
+  --margin-L: 2rem;
+  --margin-XL: 3rem;
+  --max-width: 1368px;
+  /* -- colors */
+  --color-primary: #16161a;
+  --color-accent: #ffc491;
+  --color-base: #2d2d32;
+  --color-base-light: #eee;
+  --color-text: #fff;
+  --color-text-light: #999;
+  --color-text-contrast: #000;
+  /* -- fonts */
+  --font-family: 'Content';
+  --font-family-currency: 'Content';
+  --font-family-currency: 'IBM Plex Sans', sans-serif;
+  --font-line-height: 150%;
+  --font-size-default: 1rem;
+  --font-size-M: 1.3rem;
+  --font-size-S: 0.8rem;
+  --font-size-L: 2.5rem;
+  --font-size-XL: 3rem;
+  /* -- others */
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    /* -- layout */
+    --offset: 6vw;
+    /* -- fonts */
+    --font-size-M: 1.15rem;
+    --font-size-L: 2rem;
+    --font-size-XL: 2.5rem;
+  }
+}

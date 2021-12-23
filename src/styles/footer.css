@@ -1,0 +1,5 @@
+footer {
+  color: var(--color-text-light);
+  padding: var(--margin-XL) var(--offset);
+  text-align: center;
+}

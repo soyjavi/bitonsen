@@ -1,0 +1,11 @@
+/* -- Basics */
+@import './styles/theme.css';
+@import './styles/reset.css';
+@import './styles/base.css';
+/* tags */
+@import './styles/header.css';
+@import './styles/footer.css';
+/* -- Components */
+@import './components/Calculator/Calculator.css';
+@import './components/Earnings/Earnings.css';
+@import './components/Spreadsheet/Spreadsheet.css';
