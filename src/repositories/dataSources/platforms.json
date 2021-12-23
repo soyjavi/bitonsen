@@ -7,7 +7,7 @@
     "affiliate": {
       "code": "t1hQyy0oY",
       "link": "https://www.hodlnaut.com/join/t1hQyy0oY",
-      "reward": "Receive a US$20 sign-up bonus after making a deposit equivalent of US$1,000."
+      "reward": "Receive a US$20 sign-up bonus."
     },
     "tiers": [
       { "yield": 7.46, "range": [0, 2], "compounding": "weekly" },
@@ -30,7 +30,7 @@
     "affiliate": {
       "code": "d8d8a1cd358a43222765ccb4c9937b8e",
       "link": "https://platform.ledn.io/join/d8d8a1cd358a43222765ccb4c9937b8e",
-      "reward": "Receive a $50 sign-up bonus, only until Dec 31st!"
+      "reward": "$50 sign-up bonus, only until Dec 31st!"
     },
     "tiers": [
       { "yield": 6.25, "range": [0, 0.5], "compounding": "monthly" },
@@ -43,26 +43,16 @@
     "description": "A community of over 1 million users that earn up to 17% yield on their crypto",
     "site": "https://celsius.network/",
     "logo": "http://",
-    "affiliate": { "code": "", "link": "", "reward": "" },
+    "affiliate": {
+      "code": "1995425291",
+      "link": "https://celsiusnetwork.app.link/1995425291",
+      "reward": "Earn $50 in BTC with your first transfer"
+    },
     "tiers": [
       { "yield": 6.2, "range": [0, 0.25], "compounding": "weekly" },
       { "yield": 3.05, "range": [0.25], "compounding": "weekly" }
     ],
     "notes": ["Tier Gold / Platinum provides the same In-kind rates. Earn in CEL rate up 7.81%"]
-  },
-  {
-    "name": "Nexo",
-    "description": "Unlock the Power of Your Crypto",
-    "site": "https://celsius.network/",
-    "logo": "http://",
-    "affiliate": { "code": "", "link": "", "reward": "" },
-    "tiers": [{ "yield": 4, "range": [0], "compounding": "daily" }],
-    "notes": [
-      "5.00% Platinum + Bonus 1% for 1M FLEX term = 6% (>10% NEXO Tokens in Portfolio)",
-      "4.5% Gold + Bonus 1% for 1M FLEX term = 5.5% (5% - 10% NEXO Tokens in Portfolio)",
-      "4.25% Silver + Bonus 1% for 1M FLEX term = 5.25% (1% - 5% NEXO Tokens in Portfolio)",
-      "4.00% Base + Bonus 1% for 1M FLEX term = 5% (<1% NEXO Tokens in Portfolio)"
-    ]
   },
   {
     "name": "Blockfi",
@@ -80,6 +70,20 @@
       { "yield": 0.1, "range": [0.35], "compounding": "monthly" }
     ],
     "notes": ["Holdings above >0.10 BTC, the rate drops down significatly. See yield notes."]
+  },
+  {
+    "name": "Nexo",
+    "description": "Unlock the Power of Your Crypto",
+    "site": "https://celsius.network/",
+    "logo": "http://",
+    "affiliate": { "code": "", "link": "", "reward": "" },
+    "tiers": [{ "yield": 4, "range": [0], "compounding": "daily" }],
+    "notes": [
+      "5.00% Platinum + Bonus 1% for 1M FLEX term = 6% (>10% NEXO Tokens in Portfolio)",
+      "4.5% Gold + Bonus 1% for 1M FLEX term = 5.5% (5% - 10% NEXO Tokens in Portfolio)",
+      "4.25% Silver + Bonus 1% for 1M FLEX term = 5.25% (1% - 5% NEXO Tokens in Portfolio)",
+      "4.00% Base + Bonus 1% for 1M FLEX term = 5% (<1% NEXO Tokens in Portfolio)"
+    ]
   },
   {
     "name": "YouHodler",
