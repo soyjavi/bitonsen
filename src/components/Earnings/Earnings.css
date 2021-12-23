@@ -1,8 +1,8 @@
 .earnings {
   background-color: var(--color-base);
   border-radius: var(--border-radius);
-  padding: calc(var(--offset) / 1.5) calc(var(--offset) / 1.5);
-  min-width: 300px;
+  padding: var(--margin-XL);
+  min-width: 256px;
   align-self: center;
 }
 
@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 0;
+  margin-bottom: calc(var(--unit) / 4);
 }
 
 .earnings .currency .earn {
@@ -30,4 +32,11 @@
 
 .earnings .currency + strong:not(:last-child) {
   margin-bottom: calc(var(--unit) * 2);
+}
+
+@media only screen and (max-width: 440px) {
+  .earnings {
+    min-width: auto;
+    width: -webkit-fill-available;
+  }
 }

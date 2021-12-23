@@ -33,32 +33,39 @@ export const Spreadsheet = () => {
   total.rate = total.invested ? ((total.earnings * 100) / total.invested).toFixed(2) : 0;
 
   return (
-    <div className="content">
-      <div>
-        <h1>Spreadsheet</h1>
-        <p>
-          Your crypto can earn up to 10.5% APY in crypto with a BlockFi Interest Account (BIA). Interest accrues daily
-          and is paid monthly. There are no hidden fees, no minimum balances, and no reason to wait.
-        </p>
+    <>
+      <div className="content cols">
+        <div class="col">
+          <h1>Spreadsheet</h1>
+          <p>
+            It's never too late, so get started on your crypto journey and earn high APY with a crypto interest account.
+            Here are some of my recommendations, and thanks to this spreadsheet you will be able to discover how much
+            crypto you can make monthly.
+          </p>
+        </div>
+      </div>
+      <div className="content cols">
         <table>
           <thead>
             <tr>
-              <th>Amount BTC</th>
+              <th>
+                Amount <span class="hide-mobile">BTC</span>
+              </th>
               <th>Yield</th>
               <th>Limits</th>
               <th>Compounding</th>
             </tr>
           </thead>
           <tbody>
-            {platforms.map(({ description, name, site, affiliate: { link } = {}, tiers = [] }) => (
+            {platforms.map(({ description, name, site, affiliate: { link, reward } = {}, tiers = [] }) => (
               <>
                 <tr key={name} className="platform">
                   <td colSpan="4">
                     <div className="row">
-                      <a href={link || site} target="_blank">
-                        {name}
+                      <a href={link || site} alt={description} target="_blank">
+                        {name.toUpperCase()}
                       </a>
-                      {description && <small>{description}</small>}
+                      {link ? <a href={link}>{reward}</a> : <div />}
                     </div>
                   </td>
                 </tr>
@@ -85,7 +92,11 @@ export const Spreadsheet = () => {
             ))}
           </tbody>
         </table>
-        <div className="info">
+
+        <Earnings crypto="BTC" months={12} rates={rates} total={total} />
+      </div>
+      <div className="content cols">
+        <div className="col info">
           <small>
             This calculator is indicative and for informational purposes only and is not a guarantee of actual interest
             that may be earned. Actual earned interest will be payable in cryptocurrency and will vary depending on the
@@ -95,8 +106,6 @@ export const Spreadsheet = () => {
           </small>
         </div>
       </div>
-
-      <Earnings crypto="BTC" months={12} rates={rates} total={total} />
-    </div>
+    </>
   );
 };

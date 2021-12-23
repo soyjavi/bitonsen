@@ -69,13 +69,21 @@ const Calculator = () => {
         </div>
 
         <label htmlFor="months" className="row">
-          <h1 className="currency">{value}</h1>
+          <span className="currency">{value}</span>
           <span>&nbsp;{type}</span>
         </label>
         <input type="range" id="months" name="months" min="1" max="21" value={range} onChange={handleRange} />
       </div>
 
-      <Earnings {...{ amount, crypto, months, percentage: crypto === BTC ? 0.0679 : 0.102, rates }} />
+      <Earnings
+        {...{
+          amount,
+          crypto,
+          months,
+          percentage: crypto === BTC ? 0.0679 : 0.102,
+          rates,
+        }}
+      />
     </>
   );
 };

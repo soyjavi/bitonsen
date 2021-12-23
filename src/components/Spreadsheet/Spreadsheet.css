@@ -1,9 +1,10 @@
 table {
   border-collapse: collapse;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
   color: var(--color-text-contrast);
-  margin-bottom: calc(var(--unit) * 2);
+  max-width: calc(var(--max-width) / 1.5);
   width: 100%;
+  z-index: 1;
 }
 
 table thead tr {
@@ -36,7 +37,6 @@ table tbody tr {
 
 table tbody tr.platform {
   background-color: #eee !important;
-  font-size: 0.8rem;
 }
 
 table tbody tr.platform td {
@@ -74,6 +74,7 @@ table input {
   background-color: transparent;
   font-weight: bold;
   flex: 1;
+  width: 100%;
 }
 
 table input::placeholder {
@@ -85,14 +86,24 @@ table input::placeholder {
 table tbody a {
   color: var(--color-text-light);
   font-weight: bold;
-  text-transform: uppercase;
-  flex: 1;
 }
 
 table tbody a:hover {
   color: var(--color-primary);
 }
 
-table tbody a + small {
-  color: var(--color-text-light);
+table tbody a:first-child {
+  flex: 1;
+}
+
+table tbody a:last-child {
+  text-decoration: none;
+  font-size: var(--font-size-S);
+  margin-left: var(--margin-M);
+}
+
+@media only screen and (max-width: 440px) {
+  table {
+    font-size: var(--font-size-S);
+  }
 }
