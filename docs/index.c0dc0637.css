@@ -1,19 +1,17 @@
-@import "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap';
 @font-face {
   font-family: Content;
   font-stretch: normal;
   font-style: normal;
   font-weight: 300;
-  src: url(Circular-SP-Book.caace2f3.woff2) format("woff2"),
-    url(Circular-SP-Book.8d844c0c.ttf) format("ttf");
+  src: url(Circular-SP-Book.caace2f3.woff2) format('woff2'), url(Circular-SP-Book.8d844c0c.ttf) format('ttf');
 }
 @font-face {
   font-family: Content;
   font-stretch: normal;
   font-style: normal;
   font-weight: 800;
-  src: url(Circular-SP-Bold.2b2b9cd7.woff2) format("woff2"),
-    url(Circular-SP-Bold.8c1d2fff.ttf) format("ttf");
+  src: url(Circular-SP-Bold.2b2b9cd7.woff2) format('woff2'), url(Circular-SP-Bold.8c1d2fff.ttf) format('ttf');
 }
 :root {
   --unit: 1rem;
@@ -26,21 +24,21 @@
   --color-text: #fff;
   --color-text-light: #999;
   --color-text-contrast: #000;
-  --font-family: "Content";
-  --font-family-currency: "Content";
-  --font-family-currency: "IBM Plex Sans", sans-serif;
+  --font-family: 'Content';
+  --font-family-currency: 'Content';
+  --font-family-currency: 'IBM Plex Sans', sans-serif;
   --font-line-height: 150%;
   --font-size-default: 1rem;
   --font-size-regular: 1.3rem;
-  --font-size-small: 0.8rem;
-  --font-size-large: 3rem;
-  --font-size-currency: 2.5rem;
+  --font-size-S: 0.8rem;
+  --font-size-XL: 3rem;
+  --font-size-L: 2.5rem;
 }
 @media only screen and (max-width: 480px) {
   :root {
     --font-size-regular: 1.15rem;
-    --font-size-large: 2.5rem;
-    --font-size-currency: 2rem;
+    --font-size-XL: 2.5rem;
+    --font-size-L: 2rem;
   }
 }
 html {
@@ -71,10 +69,10 @@ textarea {
   outline: none;
 }
 h1 {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-XL);
 }
 h2 {
-  font-size: calc(var(--font-size-large) * 0.8);
+  font-size: calc(var(--font-size-XL) * 0.8);
 }
 h1,
 h2 {
@@ -94,7 +92,7 @@ li {
   margin-left: calc(var(--unit) * 3);
 }
 small {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-S);
 }
 blockquote {
   background-color: var(--color-base-light);
@@ -195,7 +193,7 @@ nav.learn > a:hover {
 }
 .currency {
   font-family: var(--font-family-currency);
-  font-size: var(--font-size-currency);
+  font-size: var(--font-size-L);
   font-weight: 700;
 }
 .content {
@@ -294,12 +292,12 @@ nav.learn > a:hover {
   flex: 1;
   text-align: right;
 }
-#calculator input[type="number"] {
+#calculator input[type='number'] {
   border: 0;
   flex: 0;
   width: 100%;
 }
-#calculator input[type="range"] {
+#calculator input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--color-primary);
@@ -307,10 +305,10 @@ nav.learn > a:hover {
   outline: none;
   width: 100%;
 }
-input[type="range"]:hover {
+input[type='range']:hover {
   background-color: var(--color-text-contrast);
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--color-accent);
@@ -320,13 +318,13 @@ input[type="range"]::-webkit-slider-thumb {
   height: 28px;
   width: 28px;
 }
-input[type="range"]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   background-color: var(--color-accent);
   cursor: pointer;
   height: 28px;
   width: 28px;
 }
-input[type="range"]:active::-webkit-slider-thumb {
+input[type='range']:active::-webkit-slider-thumb {
   background-color: var(--color-primary);
   cursor: grabbing;
 }
