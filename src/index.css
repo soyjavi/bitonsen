@@ -3,6 +3,7 @@
 @import './styles/reset.css';
 @import './styles/base.css';
 /* tags */
+@import './styles/button.css';
 @import './styles/header.css';
 @import './styles/footer.css';
 /* -- Components */
