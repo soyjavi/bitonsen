@@ -1,12 +1,11 @@
 import React from 'react';
-import { parseMonths } from './modules';
+import { calcYield, parseMonths } from './modules';
 
 const BTC = 'BTC';
 
-const Earnings = ({ amount = 0, crypto = BTC, months = 6, percentage = 0.0, rates = {}, total }) => {
-  // const perc =  crypto === BTC ? 0.0679 : 0.102;
+const Earnings = ({ amount = 0, crypto = BTC, months = 6, rates = {}, total }) => {
   const rateUSD = rates[crypto] || 1;
-  const monthlyInterest = (total ? total.earnings : amount * percentage) / 12;
+  const monthlyInterest = (total ? total.earnings : amount * calcYield(amount, crypto)) / 12;
   const usdMonthlyInterest = monthlyInterest * rateUSD;
 
   return (
@@ -33,15 +32,11 @@ const Earnings = ({ amount = 0, crypto = BTC, months = 6, percentage = 0.0, rate
       </h1>
       <strong>USD Interest per month</strong>
 
-      {crypto === BTC && (
-        <>
-          <h1 className="currency">
-            <span className="symbol">₿&nbsp;</span>
-            <span className="earn">{(monthlyInterest * months).toFixed(crypto === BTC ? 6 : 2)}</span>
-          </h1>
-          <strong>Total {crypto} Earnings</strong>
-        </>
-      )}
+      <h1 className="currency">
+        <span className="symbol">{crypto === BTC ? '₿' : '₮'}&nbsp;</span>
+        <span className="earn">{(monthlyInterest * months).toFixed(crypto === BTC ? 6 : 2)}</span>
+      </h1>
+      <strong>Total {crypto} Earnings</strong>
 
       <h1 className="currency">
         <span className="symbol">$&nbsp;</span>

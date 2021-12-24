@@ -3,9 +3,9 @@ import { RatesRepository } from '../../repositories';
 
 import { Earnings } from '../Earnings';
 import { calcRange } from './modules';
+import { CRYPTO, SYMBOL } from '../../modules/constants';
 
-const BTC = 'BTC';
-const USDT = 'USDT';
+const { BTC, USDT } = CRYPTO;
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0.15);
@@ -43,11 +43,11 @@ const Calculator = () => {
       <div className="form">
         <nav className="row">
           <button className={crypto === BTC ? 'active' : undefined} onClick={() => handleCrypto(BTC)}>
-            <div className="icon currency btc">₿</div>
+            <div className={'icon currency'}>{SYMBOL.BTC}</div>
             <abbr>BTC</abbr>
           </button>
           <button className={crypto === USDT ? 'active' : undefined} onClick={() => handleCrypto(USDT)}>
-            <div className="icon currency btc">₮</div>
+            <div className={'icon currency'}>{SYMBOL.USDT}</div>
             <abbr>USDT</abbr>
           </button>
         </nav>
@@ -75,15 +75,7 @@ const Calculator = () => {
         <input type="range" id="months" name="months" min="1" max="21" value={range} onChange={handleRange} />
       </div>
 
-      <Earnings
-        {...{
-          amount,
-          crypto,
-          months,
-          percentage: crypto === BTC ? 0.0679 : 0.102,
-          rates,
-        }}
-      />
+      <Earnings {...{ amount, crypto, months, rates }} />
     </>
   );
 };

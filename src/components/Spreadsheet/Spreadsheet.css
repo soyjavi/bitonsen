@@ -1,7 +1,37 @@
+#spreadsheet h2 {
+  flex: 1;
+}
+
+#spreadsheet nav {
+  align-self: center;
+  margin-bottom: var(--margin-S);
+}
+
+#spreadsheet button {
+  background-color: var(--color-text);
+  opacity: 0.25;
+  padding: var(--margin-S);
+}
+
+#spreadsheet button.active {
+  opacity: 1;
+}
+
+#spreadsheet button:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+#spreadsheet button:last-child {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
 table {
   border-collapse: collapse;
   box-shadow: var(--shadow);
   color: var(--color-text-contrast);
+  line-height: 100%;
   max-width: calc(var(--max-width) / 1.5);
   width: 100%;
   z-index: 1;
@@ -40,7 +70,7 @@ table tbody tr.platform {
 }
 
 table tbody tr.platform td {
-  padding: calc(var(--unit) / 2) var(--unit) calc(var(--unit) / 2.5) var(--unit);
+  padding: calc(var(--unit) / 1.8) var(--unit) calc(var(--unit) / 2) var(--unit);
 }
 
 table tbody tr:nth-of-type(odd) {

@@ -23,7 +23,6 @@
 }
 
 #calculator button {
-  border: 0;
   border-bottom: solid 1px var(--color-text-light);
   color: var(--color-text-contrast);
   opacity: 0.25;
@@ -35,23 +34,20 @@
   opacity: 1;
 }
 
-#calculator .icon {
+#calculator button .icon {
   background-color: var(--color-text-light);
   border-radius: 50%;
   display: block;
-  font-size: var(--font-size-M);
-  height: 28px;
-  line-height: 26px;
-  margin-right: calc(var(--unit) / 2);
-  width: 28px;
+  font-size: var(--font-size-S);
+  height: var(--font-size-M);
+  line-height: var(--font-size-M);
+  margin-right: var(--margin-S);
+  width: var(--font-size-M);
 }
 
-#calculator button.active .icon {
-  background-color: var(--color-accent);
-}
 
 #calculator .amount {
-  border-bottom: solid 2px var(--color-text-contrast);
+  border-bottom: solid 1px var(--color-text-contrast);
   padding-bottom: calc(var(--unit) / 2);
   margin-bottom: calc(var(--unit) * 2);
 }

@@ -4,8 +4,12 @@ import { PlatformsRepository, RatesRepository } from '../../repositories';
 import { parseTier } from './modules';
 import { Earnings } from '../Earnings';
 
+const BTC = 'BTC';
+const USDT = 'USDT';
+
 export const Spreadsheet = () => {
   const [amount, setAmount] = useState({});
+  const [crypto, setCrypto] = useState(BTC);
   const [platforms] = useState(PlatformsRepository.list());
   const [rates, setRates] = useState({});
 
@@ -16,7 +20,14 @@ export const Spreadsheet = () => {
     })();
   }, []);
 
-  const handleChange = (value = '', id) => {
+  const handleCrypto = (next) => {
+    setCrypto(() => {
+      setAmount({});
+      return next;
+    });
+  };
+
+  const handleAmount = (value = '', id) => {
     setAmount({ ...amount, [id]: value >= 0 ? parseFloat(value, 10) : '' });
   };
 
@@ -35,8 +46,20 @@ export const Spreadsheet = () => {
   return (
     <>
       <div className="content cols">
-        <div class="col">
-          <h1>Spreadsheet</h1>
+        <div className="col">
+          <div class="row">
+            <h2>Spreadsheet</h2>
+            <nav className="row">
+              <button className={`${crypto === BTC ? 'active' : ''}`} onClick={() => handleCrypto(BTC)}>
+                <div className="icon currency">₿</div>
+                <small>BTC</small>
+              </button>
+              <button className={`${crypto === USDT ? 'active' : ''}`} onClick={() => handleCrypto(USDT)}>
+                <div className="icon currency">₮</div>
+                <small>USDT</small>
+              </button>
+            </nav>
+          </div>
           <p>
             It's never too late, so get started on your crypto journey and earn high APY with a crypto interest account.
             Here are some of my recommendations, and thanks to this spreadsheet you will be able to discover how much
@@ -45,55 +68,59 @@ export const Spreadsheet = () => {
         </div>
       </div>
       <div className="content cols">
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Amount <span class="hide-mobile">BTC</span>
-              </th>
-              <th>Yield</th>
-              <th>Limits</th>
-              <th>Compounding</th>
-            </tr>
-          </thead>
-          <tbody>
-            {platforms.map(({ description, name, site, affiliate: { link, reward } = {}, tiers = [] }) => (
-              <>
-                <tr key={name} className="platform">
-                  <td colSpan="4">
-                    <div className="row">
-                      <a href={link || site} alt={description} target="_blank">
-                        {name.toUpperCase()}
-                      </a>
-                      {link ? <a href={link}>{reward}</a> : <div />}
-                    </div>
-                  </td>
-                </tr>
-                {tiers.map(({ compounding, range, yield: percentage }, index) => {
-                  const id = `${name}#${index}`;
-                  return (
-                    <tr key={id} className={name ? 'anchor' : undefined}>
-                      <td>
-                        <input
-                          placeholder="0.00"
-                          type="number"
-                          step={'0.01'}
-                          value={amount[id]}
-                          onChange={({ target: { value = 0 } = {} }) => handleChange(value, id)}
-                        />
-                      </td>
-                      <td>{parseFloat(percentage, 10).toFixed(2)}%</td>
-                      <td>{parseTier(range)}</td>
-                      <td>{compounding}</td>
-                    </tr>
-                  );
-                })}
-              </>
-            ))}
-          </tbody>
-        </table>
+        <div className="col">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Amount <span className="hide-mobile">{crypto}</span>
+                </th>
+                <th>Yield</th>
+                <th>Limits</th>
+                <th>Compounding</th>
+              </tr>
+            </thead>
+            <tbody>
+              {platforms.map(({ description, name, site, affiliate: { link, reward } = {}, tiers = [] }) => (
+                <>
+                  <tr key={name} className="platform">
+                    <td colSpan="4">
+                      <div className="row">
+                        <a href={link || site} alt={description} target="_blank">
+                          {name.toUpperCase()}
+                        </a>
+                        {link ? <a href={link}>{reward}</a> : <div />}
+                      </div>
+                    </td>
+                  </tr>
+                  {tiers
+                    .filter((tier) => tier.crypto === crypto)
+                    .map(({ compounding, range, yield: percentage }, index) => {
+                      const id = `${name}#${index}`;
+                      return (
+                        <tr key={id} className={name ? 'anchor' : undefined}>
+                          <td>
+                            <input
+                              placeholder="0.00"
+                              type="number"
+                              step={'0.01'}
+                              value={amount[id]}
+                              onChange={({ target: { value = 0 } = {} }) => handleAmount(value, id)}
+                            />
+                          </td>
+                          <td>{parseFloat(percentage, 10).toFixed(2)}%</td>
+                          <td>{parseTier(range, crypto)}</td>
+                          <td>{compounding}</td>
+                        </tr>
+                      );
+                    })}
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        <Earnings crypto="BTC" months={12} rates={rates} total={total} />
+        <Earnings crypto={crypto} months={12} rates={rates} total={total} />
       </div>
       <div className="content cols">
         <div className="col info">
