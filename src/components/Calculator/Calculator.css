@@ -45,7 +45,6 @@
   width: var(--font-size-M);
 }
 
-
 #calculator .amount {
   border-bottom: solid 1px var(--color-text-contrast);
   padding-bottom: calc(var(--unit) / 2);

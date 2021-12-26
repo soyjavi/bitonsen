@@ -136,7 +136,18 @@ nav.learn > a:hover {
   margin-top: var(--margin-L);
 }
 
+@media only screen and (min-width: 1024px) {
+  section.expanded .col:first-child {
+    max-width: calc(var(--max-width) / 3);
+  }
+}
+
 @media only screen and (max-width: 1024px) {
+  section.expanded .col:first-child {
+    margin-bottom: var(--margin-M);
+    max-width: 100%;
+  }
+
   .content.cols {
     flex-direction: column;
     align-items: center;
@@ -144,6 +155,12 @@ nav.learn > a:hover {
 
   .content .col + .col:last-child {
     padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 440px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none;
   }
 }
 
