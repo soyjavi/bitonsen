@@ -86,7 +86,10 @@
     "site": "https://celsius.network/",
     "logo": "http://",
     "affiliate": { "code": "", "link": "", "reward": "" },
-    "tiers": [{ "crypto": "BTC", "yield": 4, "range": [0], "compounding": "daily" }],
+    "tiers": [
+      { "crypto": "BTC", "yield": 4, "range": [0], "compounding": "daily" },
+      { "crypto": "USDT", "yield": 8, "range": [0], "compounding": "daily" }
+    ],
     "notes": [
       "5.00% Platinum + Bonus 1% for 1M FLEX term = 6% (>10% NEXO Tokens in Portfolio)",
       "4.5% Gold + Bonus 1% for 1M FLEX term = 5.5% (5% - 10% NEXO Tokens in Portfolio)",
@@ -100,7 +103,10 @@
     "site": "https://www.youhodler.com/",
     "logo": "http://",
     "affiliate": {},
-    "tiers": [{ "crypto": "BTC", "yield": 4.5, "range": [0], "compounding": "monthly" }],
+    "tiers": [
+      { "crypto": "BTC", "yield": 4.5, "range": [0], "compounding": "weekly" },
+      { "crypto": "USDT", "yield": 12, "range": [0], "compounding": "weekly" }
+    ],
     "notes": ["Holdings above >0.10 BTC, the rate drops down significatly. See yield notes."]
   }
 ]

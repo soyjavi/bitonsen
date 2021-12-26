@@ -48,7 +48,7 @@ export const Spreadsheet = () => {
       <div className="content cols">
         <div className="col">
           <div class="row">
-            <h2>Spreadsheet</h2>
+            <h2>CeFi Spreadsheet</h2>
             <nav className="row">
               <button className={`${crypto === BTC ? 'active' : ''}`} onClick={() => handleCrypto(BTC)}>
                 <div className="icon currency">₿</div>
@@ -62,8 +62,8 @@ export const Spreadsheet = () => {
           </div>
           <p>
             It's never too late, so get started on your crypto journey and earn high APY with a crypto interest account.
-            Here are some of my recommendations, and thanks to this spreadsheet you will be able to discover how much
-            crypto you can make monthly.
+            Here are some of my recommendations, use this spreadsheet and you will be able to discover how much crypto
+            you can make.
           </p>
         </div>
       </div>

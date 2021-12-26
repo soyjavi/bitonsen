@@ -24,7 +24,6 @@
 
 #calculator button {
   border-bottom: solid 1px var(--color-text-light);
-  color: var(--color-text-contrast);
   opacity: 0.25;
   width: 100%;
 }
