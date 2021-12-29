@@ -36,9 +36,11 @@ export const Spreadsheet = () => {
     const [platformName, tierIndex] = key.split('#');
     const platform = platforms.find(({ name }) => platformName === name);
 
+    const tiers = (platform.tiers || []).filter((tier) => tier.crypto === crypto);
+
     if (amount[key]) {
       total.invested += amount[key];
-      total.earnings += amount[key] * (platform.tiers[tierIndex].yield / 100);
+      total.earnings += amount[key] * (tiers[tierIndex].yield / 100);
     }
   });
   total.rate = total.invested ? ((total.earnings * 100) / total.invested).toFixed(2) : 0;
