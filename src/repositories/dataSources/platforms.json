@@ -39,7 +39,7 @@
     "tiers": [
       { "crypto": "BTC", "yield": 6.25, "range": [0, 0.5], "compounding": "monthly" },
       { "crypto": "BTC", "yield": 2.25, "range": [0.5], "compounding": "monthly" },
-      { "crypto": "USDT", "yield": 9.5, "range": [0], "compounding": "weekly" }
+      { "crypto": "USDT", "yield": 9.5, "range": [0], "compounding": "monthly" }
     ],
     "notes": ["In collabaration with Genesis Capital. Trade between BTC & USDC on platform."]
   },
