@@ -10,14 +10,14 @@
       "reward": "Receive a US$20 sign-up bonus."
     },
     "tiers": [
-      { "crypto": "BTC", "yield": 7.46, "range": [0, 2], "compounding": "weekly" },
-      { "crypto": "BTC", "yield": 4.08, "range": [2, 10], "compounding": "weekly" },
-      { "crypto": "BTC", "yield": 2.02, "range": [10, 100], "compounding": "weekly" },
-      { "crypto": "BTC", "yield": 1, "range": [100], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 6.71, "range": [0, 0.5], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 4.08, "range": [0.5, 2], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 3.25, "range": [2, 5], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 1, "range": [5], "compounding": "weekly" },
       { "crypto": "USDT", "yield": 12.73, "range": [0, 25000], "compounding": "weekly" },
       { "crypto": "USDT", "yield": 7.25, "range": [25000, 100000], "compounding": "weekly" },
-      { "crypto": "USDT", "yield": 4.6, "range": [100000, 500000], "compounding": "weekly" },
-      { "crypto": "USDT", "yield": 3.04, "range": [500000], "compounding": "weekly" }
+      { "crypto": "USDT", "yield": 3.25, "range": [100000, 500000], "compounding": "weekly" },
+      { "crypto": "USDT", "yield": 0.25, "range": [500000], "compounding": "weekly" }
     ],
     "notes": [
       "Opt in for assets to be secured by Nexus Mutual Insurance.",
