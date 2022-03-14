@@ -54,8 +54,8 @@
       "reward": "Earn $50 in BTC with your first transfer"
     },
     "tiers": [
-      { "crypto": "BTC", "yield": 6.2, "range": [0, 0.25], "compounding": "weekly" },
-      { "crypto": "BTC", "yield": 3.05, "range": [0.25], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 5, "range": [0, 1], "compounding": "weekly" },
+      { "crypto": "BTC", "yield": 1.5, "range": [1], "compounding": "weekly" },
 
       { "crypto": "USDT", "yield": 8.5, "range": [0], "compounding": "weekly" }
     ],
